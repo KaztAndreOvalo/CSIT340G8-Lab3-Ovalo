@@ -2,12 +2,16 @@ const Header = (props) => {
   return <h1>{props.course}</h1>
 }
 
+const Part = (props) => {
+  return <p>{props.name} {props.exercises}</p>
+}
+
 const Content = (props) => {
   return (
     <div>
-      <p>{props.part1} {props.exercises1}</p>
-      <p>{props.part2} {props.exercises2}</p>
-      <p>{props.part3} {props.exercises3}</p>
+      <Part name={props.part1} exercises={props.exercises1} />
+      <Part name={props.part2} exercises={props.exercises2} />
+      <Part name={props.part3} exercises={props.exercises3} />
     </div>
   )
 }
@@ -25,7 +29,7 @@ const Footer = (props) => {
 }
 
 const App = () => {
-  const course = 'BS Information Technology'
+  const course = 'Project Management for IT'
   const part1 = 'Industry Elective 1'
   const exercises1 = 3
   const part2 = 'Data Analytics 1'
@@ -36,6 +40,7 @@ const App = () => {
   return (
     <div>
       <Header course={course} />
+
       <Content
         part1={part1} exercises1={exercises1}
         part2={part2} exercises2={exercises2}
