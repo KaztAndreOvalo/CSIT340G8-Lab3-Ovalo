@@ -33,27 +33,29 @@ const Footer = (props) => {
 }
 
 const App = () => {
-  const course = 'Project Management for IT'
-  const parts = [
-    {
-      name: 'Industry Elective 1',
-      exercises: 3
-    },
-    {
-      name: 'Data Analytics 1',
-      exercises: 3
-    },
-    {
-      name: 'Information Management 2',
-      exercises: 3
-    }
-  ]
+  const course = {
+    name: 'Project Management for IT',
+    parts: [
+      {
+        name: 'Industry Elective 1',
+        exercises: 3
+      },
+      {
+        name: 'Data Analytics 1',
+        exercises: 3
+      },
+      {
+        name: 'Information Management 2',
+        exercises: 3
+      }
+    ]
+  }
 
   return (
     <div>
-      <Header course={course} />
-      <Content parts={parts} />
-      <Total parts={parts} />
+      <Header course={course.name} />
+      <Content parts={course.parts} />
+      <Total parts={course.parts} />
       <Footer name="Kazt Andre S. Ovalo" code="CSIT340" section="G8" />
     </div>
   )
